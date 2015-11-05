@@ -1,5 +1,4 @@
 <?php
-    // break if no input given.
     $url = "";
 
     if ( isset( $_GET['url']) ) {
@@ -7,7 +6,6 @@
 
        # echo $url;
        # echo "<pre>";
-        header('Content-type: text/plain; charset=utf-8');
     }
 
 
@@ -37,8 +35,10 @@
         <?php
         exit;
     }
-
+     header('Content-type: text/plain; charset=utf-8');
+   
     // load contents of url
+    // todo , add some errorhandling if file is offline 404 or denied 401 (wrong api key)
     $lines = file( $url );
 
     // split file into lines
