@@ -1,4 +1,11 @@
 <?php
+
+    /* 
+    *   Requires PHP > 5.3.x because of DateTime Object. 
+    */
+
+    date_default_timezone_set('UTC');
+
     $url = "";
 
     if ( isset( $_GET['url']) ) {
