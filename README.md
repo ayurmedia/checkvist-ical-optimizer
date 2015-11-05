@@ -6,6 +6,7 @@ put this .php file in your webserver and call the url in the browser.
 you get a form where you can enter the ical url. 
 
 get the ical subscription-link from checkvist by getting the ical link from the due-date popup. 
+uncheck the checkbox (off) with the option "export full day events" as the converter only changes single events. 
 
 past the url into the form field and click submit. 
 
