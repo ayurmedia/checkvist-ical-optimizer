@@ -77,10 +77,10 @@
                     // @14:00-15:00         @2h @30m
                     // @(14)(:(00))?(-(15))?(:(00))?        @(2)(h|m)+
                     // @__:__-__:__  , @start-end , @start
-                    // @__(d|h|m)    , @duration
+                    // @__(h|m)    , @duration
                     $nr = '([0-9]{1,2})';
 
-                    // grap start,end
+                    // grep start,end
                     $has_matches = preg_match("/\@$nr(\:$nr)?(\-$nr)?(\:$nr)?/", $line_value, $matches);
                     #print_r( $matches );
 
@@ -108,11 +108,6 @@
                         }
                         if (isset($matches[7])) {
                             $time_end_min = sprintf("%02d", $matches[7]);
-
-                            // invalid interval, negative
-                            if( $time_end_min < $time_start_min ) {
-                                $time_end_min = $time_start_min;
-                            }
                         }
                     }
 
@@ -159,7 +154,6 @@
                             $matches[1]."T".$time_start_hour . $time_start_min . "00");
                     $new_date_start = $dateTime->format('Ymd\THis' );
 
-                    #$line_out = preg_replace( "/". $matches[0] ."T".  $matches[1] ."/", $new_date_start, $line );
                     $line_out = str_replace(  $matches[0] , $new_date_start, $line );
                 }
             }
