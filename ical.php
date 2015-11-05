@@ -13,7 +13,7 @@
 
     // validate if url matches checkvist subscription and deny other request.
 
-    // https://checkvist.com/checklists/due.ics?remote_key=5STDqUVqKrEMPd&all_day_events=false&treat_asap_as_todo=false&include_archived_lists=true&show_not_mine=false
+    // https://checkvist.com/checklists/due.ics?remote_key=***************&all_day_events=false&treat_asap_as_todo=false&include_archived_lists=true&show_not_mine=false
 
     if ( !preg_match( "/^https\:\/\/checkvist\.com\/checklists\/due\.ics/", $url ) ) {
         ?>
